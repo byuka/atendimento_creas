@@ -1,1 +1,18 @@
 <h1>Listagem de Serviços</h1>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th></th>
+    </tr>
+    <% @servicos.each do |servico| %>
+        <tr>
+            <td><%= servico.id %></td>
+            <td><%= link_to servico.nome, servico %></td>
+            <td><%= link_to "Excluir", servico, method: :delete, data: { confirm: "Tem certeza?" } %></td>
+        </tr>
+    <% end %>s
+</table>
+
+<%= link_to  "Cadastrar serviços", new_service_path %>
