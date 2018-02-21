@@ -1,8 +1,6 @@
 <h1>Cadastrar novo serviço</h1>
 
-<%= simple_form_for @servico do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :nome %>
-    <%= f.input :descricao, label: "Descrição" %>
-    <%= f.button :submit, "Cadastrar serviço" %>
-<% end %>
+<%= render "form", servico: @servico %>
+
+<hr>
+<%= link_to  "Voltar", services_path %>

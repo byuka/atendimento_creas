@@ -4,15 +4,22 @@
     <tr>
         <th>#</th>
         <th>Nome</th>
-        <th></th>
+        <th colspan="2"></th>
     </tr>
     <% @servicos.each do |servico| %>
         <tr>
             <td><%= servico.id %></td>
             <td><%= link_to servico.nome, servico %></td>
-            <td><%= link_to "Excluir", servico, method: :delete, data: { confirm: "Tem certeza?" } %></td>
+            <td><%= link_to "Editar", edit_service_path(servico) %></td>
+            <td>
+                <% if servico.ativo %>
+                    Ativo
+                <% else %>
+                    Inativo
+                <% end %>
+            </td>
         </tr>
-    <% end %>s
+    <% end %>
 </table>
 
 <%= link_to  "Cadastrar serviços", new_service_path %>

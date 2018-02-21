@@ -1,6 +1,8 @@
 <h1><%= @servico.id %> - <%= @servico.nome %></h1>
 
-
-<h3 id ="descricao_servicos">Descrição: </h3><br\>
+<h3 class="mt-5">Descrição: </h3>
 <%= @servico.descricao %>
+
+<hr>
+<%= link_to  "Voltar", services_path %>
 
