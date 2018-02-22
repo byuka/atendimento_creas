@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+    before_action :procura_servico, only: [:show, :edit, :update]
+    # before_action :procura_servico, except: [:index]
+
     def index
         @servicos = Service.all
     end
@@ -18,7 +21,6 @@ class ServicesController < ApplicationController
     end
 
     def show
-        @servico = Service.find(params[:id])
     end
 
     def destroy
@@ -27,21 +29,21 @@ class ServicesController < ApplicationController
     end
 
     def edit
-        @servico = Service.find(params[:id])
     end
 
-    def update
-        @servico = Service.find(params[:id])
-       
+    def update       
         if @servico.update(service_params)
             redirect_to services_url, notice: "Dados atualizados com sucesso!"
         else
             render :edit
-        end
-        
+        end        
     end
     
     private
+    def procura_servico
+        @servico = Service.find(params[:id])
+    end
+
     def service_params
         params.require(:service).permit(:nome, :descricao, :ativo)
     end

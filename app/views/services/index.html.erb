@@ -4,20 +4,21 @@
     <tr>
         <th>#</th>
         <th>Nome</th>
-        <th colspan="2"></th>
+        <th>Situação</th>
+        <th colspan="1"></th>
     </tr>
     <% @servicos.each do |servico| %>
         <tr>
             <td><%= servico.id %></td>
             <td><%= link_to servico.nome, servico %></td>
-            <td><%= link_to "Editar", edit_service_path(servico) %></td>
             <td>
                 <% if servico.ativo %>
-                    Ativo
+                Ativo
                 <% else %>
-                    Inativo
+                Inativo
                 <% end %>
             </td>
+            <td><%= link_to "Editar", edit_service_path(servico) %></td>
         </tr>
     <% end %>
 </table>
