@@ -1,0 +1,11 @@
+<h1><%= @tecnico.id %> - <%= @tecnico.nome %></h1>
+
+<h3 class="mt-5">Informações: </h3>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Cargo: </strong><%= @tecnico.cargo %></li>
+  <li class="list-group-item"><strong>Matricula: </strong><%= @tecnico.matricula %></li>
+  <li class="list-group-item"><strong>Data de nascimento: </strong><%= l @tecnico.data_nascimento, format: :long %></li>
+</ul>
+<hr>
+<%= link_to  "Voltar", technicians_path %>
+

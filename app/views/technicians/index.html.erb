@@ -1,0 +1,26 @@
+<h1>Listagem de Técnicos</h1>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Situação</th>
+        <th colspan="1"></th>
+    </tr>
+    <% @tecnicos.each do |tecnico| %>
+        <tr>
+            <td><%= tecnico.id %></td>
+            <td><%= link_to tecnico.nome, tecnico %></td>
+            <td>
+                <% if tecnico.ativo %>
+                Ativo
+                <% else %>
+                Inativo
+                <% end %>
+            </td>
+            <td><%= link_to "Editar", edit_technician_path(tecnico) %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to  "Cadastrar técnicos", new_technician_path %>

@@ -1,0 +1,9 @@
+<%= simple_form_for @tecnico do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :nome %>
+    <%= f.input :data_nascimento, label: "Data de nascimento", start_year: Time.now.year - 110, end_year: Time.now.year %>
+    <%= f.input :matricula, label: "Matricula" %>
+    <%= f.input :cargo, label: "Cargo" %>
+    <%= f.input :ativo %>
+    <%= f.button :submit, "Salvar" %>
+<% end %>

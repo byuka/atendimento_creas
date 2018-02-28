@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  data_nascimento: 2018-02-23
+  matricula: 
+  cargo: MyString
+
+two:
+  nome: MyString
+  data_nascimento: 2018-02-23
+  matricula: 
+  cargo: MyString
