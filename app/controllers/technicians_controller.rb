@@ -16,7 +16,7 @@ class TechniciansController < ApplicationController
   end
 
   def create
-    @tecnico = Assistance.new(technician_params)
+    @tecnico = Technician.new(technician_params)
 
     if @tecnico.save
         redirect_to @tecnico, notice: "Cadastrado com sucesso!"

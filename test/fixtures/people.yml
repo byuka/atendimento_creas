@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  data_nascimento: 2018-02-28
+  cpf: MyString
+  gr: MyString
+  endereco_logradouro: MyString
+  endereco_numero: MyString
+  endereco_bairro: MyString
+  naturalidade: MyString
+  nome_progenitor: MyString
+  nome_progenitora: MyString
+  etinia: MyString
+  escolaridade: MyString
+  obs: MyText
+  ativo: false
+
+two:
+  nome: MyString
+  data_nascimento: 2018-02-28
+  cpf: MyString
+  gr: MyString
+  endereco_logradouro: MyString
+  endereco_numero: MyString
+  endereco_bairro: MyString
+  naturalidade: MyString
+  nome_progenitor: MyString
+  nome_progenitora: MyString
+  etinia: MyString
+  escolaridade: MyString
+  obs: MyText
+  ativo: false

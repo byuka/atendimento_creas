@@ -10,12 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223131250) do
+ActiveRecord::Schema.define(version: 20180228144121) do
 
   create_table "assistances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "nome", null: false
     t.text "descricao"
     t.boolean "ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "nome", null: false
+    t.date "data_nascimento"
+    t.string "cpf"
+    t.string "rg"
+    t.string "endereco_logradouro"
+    t.string "endereco_numero"
+    t.string "endereco_bairro"
+    t.string "naturalidade"
+    t.string "nome_progenitor"
+    t.string "nome_progenitora"
+    t.string "etinia"
+    t.string "escolaridade"
+    t.text "obs"
+    t.boolean "ativo", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

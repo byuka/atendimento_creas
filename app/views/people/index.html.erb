@@ -1,0 +1,26 @@
+<h1>Listagem de Cidadãos</h1>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Situação</th>
+    </tr>
+    <% @people.each do |person| %>
+        <tr>
+            <td><%= person.id %></td>
+            <td><%= link_to person.nome, person %></td>
+            <td>
+                <% if person.ativo %>
+                Ativo
+                <% else %>
+                Inativo
+                <% end %>
+            </td>
+            <td><%= link_to "Editar", edit_person_path(person) %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to  "Cadastrar Cidadão", new_person_path %>

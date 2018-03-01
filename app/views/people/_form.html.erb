@@ -1,0 +1,22 @@
+
+<%= simple_form_for person do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs"></div>
+    <%= f.input :nome, label: "Nome completo: " %>
+    <%= f.input :data_nascimento, label: "Data de nascimento: ", start_year: Time.now.year - 110, end_year: Time.now.year%>
+    <%= f.input :cpf, label: "CPF: " %>
+    <%= f.input :rg, label: "RG: " %>
+    <%= f.input :nome_progenitor, label: "Nome do pai: " %>
+    <%= f.input :nome_progenitora, label: "Nome da mãe: " %>
+    <%= f.input :etinia, label: "Cor da pele: " %>
+    <%= f.input :escolaridade, label: "Grau de escolaridade: " %>
+    <%= f.input :naturalidade, label: "Naturalidade" %>
+    <%= f.input :endereco_logradouro, label: "Logradouro: " %>
+    <%= f.input :endereco_numero, label: "Número: " %>
+    <%= f.input :endereco_bairro, label: "Bairro: " %>
+    <%= f.input :ativo %>
+    <%= f.input :obs, label: "Informações Adicionais: "%>
+    <%= f.button :submit, "Salvar" %>
+  </div>
+<% end %>

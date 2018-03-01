@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @person.nome %>
+</p>
+
+<p>
+  <strong>Data nascimento:</strong>
+  <%= @person.data_nascimento %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @person.cpf %>
+</p>
+
+<p>
+  <strong>RG:</strong>
+  <%= @person.rg %>
+</p>
+
+<p>
+  <strong>Endereco logradouro:</strong>
+  <%= @person.endereco_logradouro %>
+</p>
+
+<p>
+  <strong>Endereco numero:</strong>
+  <%= @person.endereco_numero %>
+</p>
+
+<p>
+  <strong>Endereco bairro:</strong>
+  <%= @person.endereco_bairro %>
+</p>
+
+<p>
+  <strong>Naturalidade:</strong>
+  <%= @person.naturalidade %>
+</p>
+
+<p>
+  <strong>Nome progenitor:</strong>
+  <%= @person.nome_progenitor %>
+</p>
+
+<p>
+  <strong>Nome progenitora:</strong>
+  <%= @person.nome_progenitora %>
+</p>
+
+<p>
+  <strong>Etinia:</strong>
+  <%= @person.etinia %>
+</p>
+
+<p>
+  <strong>Escolaridade:</strong>
+  <%= @person.escolaridade %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @person.obs %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @person.ativo %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
