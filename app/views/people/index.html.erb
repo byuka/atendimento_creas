@@ -7,18 +7,18 @@
         <th>Data de Nascimento</th>
         <th>Situação</th>
     </tr>
-    <% @people.each do |person| %>
+    <% @cidadaos.each do |cidadao| %>
         <tr>
-            <td><%= person.id %></td>
-            <td><%= link_to person.nome, person %></td>
+            <td><%= cidadao.id %></td>
+            <td><%= link_to cidadao.nome, cidadao %></td>
             <td>
-                <% if person.ativo %>
+                <% if cidadao.ativo %>
                 Ativo
                 <% else %>
                 Inativo
                 <% end %>
             </td>
-            <td><%= link_to "Editar", edit_person_path(person) %></td>
+            <td><%= link_to "Editar", edit_person_path(cidadao) %></td>
         </tr>
     <% end %>
 </table>

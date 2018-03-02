@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228144121) do
+ActiveRecord::Schema.define(version: 20180301152514) do
 
   create_table "assistances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "nome", null: false
@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 20180228144121) do
     t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "attendances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "service_id", null: false
+    t.bigint "technician_id", null: false
+    t.bigint "person_id", null: false
+    t.bigint "assistance_id"
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assistance_id"], name: "index_attendances_on_assistance_id"
+    t.index ["person_id"], name: "index_attendances_on_person_id"
+    t.index ["service_id"], name: "index_attendances_on_service_id"
+    t.index ["technician_id"], name: "index_attendances_on_technician_id"
   end
 
   create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -57,4 +71,8 @@ ActiveRecord::Schema.define(version: 20180228144121) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attendances", "assistances"
+  add_foreign_key "attendances", "people"
+  add_foreign_key "attendances", "services"
+  add_foreign_key "attendances", "technicians"
 end

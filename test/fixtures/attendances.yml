@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service: one
+  technician: one
+  person: one
+  assistance: one
+  descricao: MyText
+
+two:
+  service: two
+  technician: two
+  person: two
+  assistance: two
+  descricao: MyText

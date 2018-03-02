@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'people#index'
+  resources :attendances, path: :atendimentos
   resources :people, path: :cidadaos
   resources :technicians, path: :tecnicos
   resources :assistances, path: :beneficios

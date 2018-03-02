@@ -1,0 +1,20 @@
+<h1>Listagem de Atendimentos</h1>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Situação</th>
+        <th colspan="1"></th>
+    </tr>
+    <% @atendimentos.each do |atendimento| %>
+        <tr>
+            <td><%= atendimento.id %></td>
+            <td><%= link_to atendimento.person.nome, atendimento %></td>
+
+            <td><%= link_to "Editar", edit_attendance_path(atendimento) %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to  "Cadastrar Atendimento", new_attendance_path %>

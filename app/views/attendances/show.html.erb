@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @atendimento.person.id %> - <%= @atendimento.person.nome %></h1>
+
+<h3 class="mt-5">Informações: </h3>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Serviço: </strong><%= @atendimento.service.nome %></li>
+  <li class="list-group-item"><strong>Técnico: </strong><%= @atendimento.technician.nome %></li>
+  <li class="list-group-item"><strong>Benefício: </strong><%= @atendimento.assistance.nome %></li>
+</ul>
+<hr>
+<%= link_to  "Voltar", technicians_path %>
+
+
+<%= link_to 'Edit', edit_attendance_path(@atendimento) %> |
+<%= link_to 'Back', attendances_path %>

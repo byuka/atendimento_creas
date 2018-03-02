@@ -1,4 +1,9 @@
 class Assistance < ApplicationRecord
-    validates :nome, presence: true,
-                   uniqueness: { case_sensitive: false }
+    has_many :attendances
+    #validates :nome, presence: true,
+    #               uniqueness: { case_sensitive: false }
+
+   def name
+       nome
+   end
 end
