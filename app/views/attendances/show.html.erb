@@ -6,7 +6,7 @@
 <ul class="list-group">
   <li class="list-group-item"><strong>Serviço: </strong><%= @atendimento.service.nome %></li>
   <li class="list-group-item"><strong>Técnico: </strong><%= @atendimento.technician.nome %></li>
-  <li class="list-group-item"><strong>Benefício: </strong><%= @atendimento.assistance.nome %></li>
+  <li class="list-group-item"><strong>Benefício: </strong><%= @atendimento.assistance.try(:nome) %></li>
 </ul>
 <hr>
 <%= link_to  "Voltar", technicians_path %>
