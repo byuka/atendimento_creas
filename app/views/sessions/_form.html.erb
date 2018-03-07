@@ -1,0 +1,14 @@
+<%= simple_form_for(:session, url: session_path, html: {class: "form-signin"}) do |f| %>
+  <%= f.input :email, label_html: { class: "sr-only" }, placeholder: "E-mail", autofocus: true %>
+  <%= f.input :password, label_html: { class: "sr-only" }, placeholder: "Senha" %>
+  <%= f.button :submit, "Entrar", class: "btn btn-lg btn-primary btn-block" %>
+  
+  <hr>
+  <div class="other-links">
+    <% if Clearance.configuration.allow_sign_up? %>
+      <%= link_to t(".sign_up"), sign_up_path %><br>
+    <% end %>
+    <%= link_to t(".forgot_password"), new_password_path %>
+  </div>
+<% end %>
+

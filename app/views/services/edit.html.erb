@@ -3,5 +3,4 @@
 <%= render "form", servico: @servico %>
 
 <hr>
-<%= link_to "Excluir", @servico, method: :delete, data: { confirm: "Tem certeza que deseja exluir \"#{@servico.nome}\"?" }, class: "float-right btn btn-danger btn-sm" %>
 <%= link_to  "Voltar", services_path %>

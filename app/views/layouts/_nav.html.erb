@@ -8,20 +8,23 @@
             <li class="nav-item active">
                 <%= link_to  "Atendimentos", attendances_path, class: "nav-link" %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <%= link_to  "Cidadãos", people_path, class: "nav-link" %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <%= link_to  "Benefícios", assistances_path, class: "nav-link" %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <%= link_to  "Serviços", services_path, class: "nav-link" %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <%= link_to  "Técnicos", technicians_path, class: "nav-link" %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <%= link_to  "Relatórios", "#", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to  "Sair", sign_out_path, class: "nav-link ", method: :delete %>
             </li>
         </ul>
     </div>

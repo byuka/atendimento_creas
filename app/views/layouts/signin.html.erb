@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>AtendimentoCreas</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="text-center" id="auth">
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

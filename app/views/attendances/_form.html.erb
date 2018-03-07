@@ -2,11 +2,12 @@
 <%= simple_form_for(@atendimento) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <!--<div class="form-inputs">!-->
+  <div>
       <%= f.association :person, label: "Cidadão: " %>
       <%= f.association :service, label: "Serviço: " %>
       <%= f.association :technician, label: "Técnico: " %>
-      <%= f.association :assistance, label: "Benefício: ", as: :radio_buttons %>
+      <%= f.association :assistance, label: "Benefício: " %>
       <%= f.input :descricao, label: "Informações complementares: " %>
 
       <%= f.button :submit, "Salvar" %>

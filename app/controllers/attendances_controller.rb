@@ -18,7 +18,7 @@ class AttendancesController < ApplicationController
   def create
     @atendimento = Attendance.new(attendance_params)
 
-    if @Atendimento.save
+    if @atendimento.save
       redirect_to @atendimento, notice: "Cadastrado com sucesso!"
     else 
       render :new
