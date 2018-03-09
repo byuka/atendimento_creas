@@ -1,15 +1,6 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+<h1>Cadastrar novo usuário</h1>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+<%= render "form", usuario: @usuario %>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
-  <% end %>
-</div>
+<hr>
+<%= link_to  "Voltar", users_path %>

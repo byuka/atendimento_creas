@@ -24,7 +24,10 @@
                 <%= link_to  "Relatórios", "#", class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to  "Sair", sign_out_path, class: "nav-link ", method: :delete %>
+                <%= link_to  "Usuários e Permissões", users_path, class: "nav-link " %>
+            </li>
+            <li class="nav-item">
+                <%= link_to  "#{current_user.nome} (Sair)", sign_out_path, class: "nav-link ", method: :delete %>
             </li>
         </ul>
     </div>
