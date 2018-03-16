@@ -3,6 +3,7 @@ class PeopleController < ApplicationController
 
   def index
     @cidadaos = Person.all
+    authorize @cidadaos
   end
 
   def show
@@ -10,6 +11,7 @@ class PeopleController < ApplicationController
 
   def new
     @cidadao = Person.new
+    authorize @cidadao
   end
 
   def edit
@@ -17,6 +19,7 @@ class PeopleController < ApplicationController
 
   def create
     @cidadao = Person.new(person_params)
+    authorize @cidadao
 
     if @cidadao.save
       redirect_to @cidadao, notice: "Cadastrado com sucesso!"
@@ -33,15 +36,12 @@ class PeopleController < ApplicationController
     end      
   end
 
-  def destroy
-    Person.find(params[:id]).destroy
-    redirect_to people_url, notice: "Excluído com sucesso!"
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def procura_cidadao
       @cidadao = Person.find(params[:id])
+      # authorize @cidadao
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

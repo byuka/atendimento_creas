@@ -57,3 +57,4 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'clearance'
+gem "pundit"

@@ -1,10 +1,20 @@
-<h1><%= @tecnico.id %> - <%= @tecnico.nome %></h1>
+<h1 class="mb-5 mt-5"><%= @tecnico.id %> - <%= @tecnico.nome %></h1>
 
-<h3 class="mt-5">Informações: </h3>
-<ul class="list-group">
-  <li class="list-group-item"><strong>Cargo: </strong><%= @tecnico.cargo %></li>
-  <li class="list-group-item"><strong>Matricula: </strong><%= @tecnico.matricula %></li>
-  <li class="list-group-item"><strong>Data de nascimento: </strong><%= l @tecnico.data_nascimento, format: :long %></li>
+<h4 class="text-center">Informações Gerais</h4>
+<ul class="info-list">
+    <li><span class="campo">Código:</span> <%= @tecnico.id %></li>
+    <li><span class="campo">Nome:</span> <%= @tecnico.nome %></li>
+    <li><span class="campo">Matricula:</span> <%= @tecnico.matricula %></li>
+    <li><span class="campo">Cargo:</span> <%= @tecnico.matricula %></li>
+    <li><span class="campo">Matricula:</span> <%= @tecnico.cargo %></li>
+    <li><span class="campo">Data de cadastro:</span> <%= l @tecnico.created_at, format: :long %></li>
+    <li><span class="campo">Ativo:</span>
+      <% if @tecnico.ativo %>
+        Sim
+      <% else %>
+        Não
+      <% end %>
+    </li>
 </ul>
 <hr>
 <%= link_to  "Voltar", technicians_path %>

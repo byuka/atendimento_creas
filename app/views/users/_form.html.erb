@@ -6,8 +6,11 @@
   <%= f.input :nome, label: "Nome completo: " %>
   <%= f.input :cpf, label: "CPF: " %>
   <%= f.input :email, label: "E-mail: " %>
-  <%= f.input :password, label: "Senha: " %>
+  <% if params[:action] == "new" %>
+    <%= f.input :password, label: "Senha: " %>
+  <% end %>
   <%= f.input :permissao, label: "Perfil: ", collection: PERMISSOES, as: :radio_buttons %>
+  <%= f.input :ativo %>
   <%= f.button :submit, "Salvar" %>
   
 </div>

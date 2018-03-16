@@ -1,0 +1,19 @@
+<h1 class="mb-5 mt-5"><%= @usuario.id %> - <%= @usuario.nome %></h1>
+<h4 class="text-center">Informações Gerais</h4>
+
+<ul class="info-list">
+  <li><span class="campo">Código:</span> <%= @usuario.id %></li>
+  <li><span class="campo">Nome:</span> <%= @usuario.nome %></li>
+  <li><span class="campo">CPF:</span> <%= @usuario.cpf %></li>
+  <li><span class="campo">Perfil:</span> <%= @usuario.permissao %></li>
+  <li><span class="campo">Data de cadastro:</span> <%= l @usuario.created_at, format: :long %></li>
+  <li><span class="campo">Ativo:</span>
+    <% if @usuario.ativo %>
+      Sim
+    <% else %>
+      Não
+    <% end %>
+  </li>
+</ul>
+<hr>
+<%= link_to  "Voltar", users_path %>

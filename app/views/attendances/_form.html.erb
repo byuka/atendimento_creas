@@ -3,8 +3,14 @@
   <%= f.error_notification %>
 
   <!--<div class="form-inputs">!-->
+
   <div>
-      <%= f.association :person, label: "Cidadão: " %>
+      <% if @cidadao.present? %>
+        <%= f.input :person_id, as: :hidden, input_html: { value: @cidadao.id } %>
+        <p>Atendimento para o cidadão: <strong></strong><%= @cidadao.nome %></strong></p>
+      <% else %>
+        <%= f.association :person, label: "Cidadão: " %>
+      <% end %>
       <%= f.association :service, label: "Serviço: " %>
       <%= f.association :technician, label: "Técnico: " %>
       <%= f.association :assistance, label: "Benefício: " %>

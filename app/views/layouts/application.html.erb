@@ -10,7 +10,7 @@
 
   <body>
     <%= render  "layouts/nav" %>
-    <div class="container" id="conteudo">
+    <div class="container mb-5" id="conteudo">
       <% if flash[:notice] %>
         <div class="alert alert-info">
           <%= flash[:notice] %>
@@ -24,6 +24,7 @@
       <% end %>
 
       <%= yield %>
+
     </div>
   </body>
 </html>

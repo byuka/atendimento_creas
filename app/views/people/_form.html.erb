@@ -1,22 +1,63 @@
 
 <%= simple_form_for cidadao do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :nome, label: "Nome completo: " %>
-    <%= f.input :data_nascimento, label: "Data de nascimento: ", start_year: Time.now.year - 110, end_year: Time.now.year %>
-    <%= f.input :cpf, label: "CPF: " %>
-    <%= f.input :rg, label: "RG: " %>
-    <%= f.input :nome_progenitor, label: "Nome do pai: " %>
-    <%= f.input :nome_progenitora, label: "Nome da mãe: " %>
-    <%= f.input :etinia, label: "Cor da pele: " %>
-    <%= f.input :escolaridade, label: "Grau de escolaridade: " %>
-    <%= f.input :naturalidade, label: "Naturalidade" %>
-    <%= f.input :endereco_logradouro, label: "Logradouro: " %>
-    <%= f.input :endereco_numero, label: "Número: " %>
-    <%= f.input :endereco_bairro, label: "Bairro: " %>
-    <%= f.input :ativo %>
-    <%= f.input :obs, label: "Informações Adicionais: "%>
-    <%= f.button :submit, "Salvar" %>
+  <%= f.input :nome, label: "Nome completo: " %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :cpf, label: "CPF: ", placeholder: "000.000.000-00", input_html: { class: "cpf " } %>
+    </div>
+    <div class="col">
+      <%= f.input :rg, label: "RG: ", input_html: { class: "rg" } %>
+    </div>
+    <div class="col">
+      <%= f.input :data_nascimento, label: "Data de nascimento: ", start_year: Time.now.year - 110, end_year: Time.now.year %>
+    </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :nome_progenitor, label: "Nome do pai: " %>
+    </div>
+    <div class="col">
+      <%= f.input :nome_progenitora, label: "Nome da mãe: " %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :naturalidade, label: "Naturalidade" %>
+    </div>
+    <div class="col">
+      <%= f.input :etinia, label: "Cor da pele: ",
+        collection: ["Branco",
+        "Pardo",
+        "Preto",
+        "Amarelo",
+        "Indigena"]%>
+    </div>
+    <div class="col">
+        <%= f.input :escolaridade, label: "Grau de escolaridade: ", 
+          collection: ["Analfabeto",
+          "Ensino fundamental incompleto",
+          "Ensino fundamental completo",
+          "Ensino médio incompleto",
+          "Ensino médio completo",
+          "Ensino superior incompleto",
+          "Ensino superior completo"], 
+          prompt: "Selecione" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-10">
+      <%= f.input :endereco_logradouro, label: "Logradouro: " %>
+    </div>
+    <div class="col">
+      <%= f.input :endereco_numero, label: "Número: " %>
+    </div>
+  </div>
+  <%= f.input :endereco_bairro, label: "Bairro: " %>
+  <hr>
+  <% unless params[:action] == "new" %>
+    <%= f.input :ativo %>
+  <% end %>
+  <%= f.input :obs, label: "Informações Adicionais: "%>
+  <%= f.button :submit, "Salvar", class:"btn-lg btn btn-outline-primary btn-block" %>
 <% end %>

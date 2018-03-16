@@ -2,16 +2,20 @@ class ServicesController < ApplicationController
     before_action :procura_servico, only: [:show, :edit, :update]
     # before_action :procura_servico, except: [:index]
 
+
     def index
         @servicos = Service.all
+        authorize @servicos
     end
 
     def new
         @servico = Service.new
+        authorize @servico
     end
 
     def create
         @servico = Service.new(service_params)
+        authorize @servico
 
         if @servico.save
             redirect_to @servico, notice: "Cadastrado com sucesso!"
@@ -21,11 +25,6 @@ class ServicesController < ApplicationController
     end
 
     def show
-    end
-
-    def destroy
-        Service.find(params[:id]).destroy
-        redirect_to services_url, notice: "Excluído com sucesso!"
     end
 
     def edit
@@ -42,6 +41,7 @@ class ServicesController < ApplicationController
     private
     def procura_servico
         @servico = Service.find(params[:id])
+        authorize @servico
     end
 
     def service_params

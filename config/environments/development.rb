@@ -10,6 +10,9 @@ Rails.application.configure do
   #   authentication:       'plain',
   #   enable_starttls_auto: true  }
   
+  # web console
+  config.web_console.whitelisted_ips = '10.0.2.2'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

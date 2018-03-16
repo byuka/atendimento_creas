@@ -1,16 +1,24 @@
-<h1>Listagem de Cidadãos</h1>
+<h1 class="mb-5 mt-5">Listagem de Cidadãos</h1>
 
 <table class="table">
-    <tr>
-        <th>#</th>
-        <th>Nome</th>
-        <th>Data de Nascimento</th>
-        <th>Situação</th>
-    </tr>
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Data de Nascimento</th>
+            <th>Situação</th>
+            <th colspan="1"></th>
+        </tr>
+    </thead>
     <% @cidadaos.each do |cidadao| %>
         <tr>
             <td><%= cidadao.id %></td>
             <td><%= link_to cidadao.nome, cidadao %></td>
+            <td><%= cidadao.cpf %></td>
+            <td><%= cidadao.rg %></td>
+            <td><%= cidadao.data_nascimento %></td>
             <td>
                 <% if cidadao.ativo %>
                 Ativo

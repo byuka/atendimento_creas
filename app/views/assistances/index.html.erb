@@ -1,13 +1,15 @@
-<h1>Listagem de Benefícios</h1>
+<h1 class="mb-5 mt-5">Listagem de Benefícios</h1>
 
 <table class="table">
-    <tr>
-        <th>#</th>
-        <th>Nome</th>
-        <th>Situação</th>
-        <th colspan="2"></th>
-    </tr>
-    <% if @beneficios.present? %>
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Situação</th>
+            <th colspan="2"></th>
+        </tr>
+        <% if @beneficios.present? %>
+    </thead>
         <% @beneficios.each do |beneficio| %>
             <tr>
                 <td><%= beneficio.id %></td>

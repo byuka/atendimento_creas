@@ -3,6 +3,7 @@ class AttendancesController < ApplicationController
 
   def index
     @atendimentos = Attendance.all
+    authorize @atendimentos
   end
 
   def show
@@ -10,6 +11,10 @@ class AttendancesController < ApplicationController
 
   def new
     @atendimento = Attendance.new
+    if params.has_key?(:cidadao_id)
+      @cidadao = Person.find(params[:cidadao_id])
+    end
+    authorize @atendimento
   end
 
   def edit
@@ -17,6 +22,7 @@ class AttendancesController < ApplicationController
 
   def create
     @atendimento = Attendance.new(attendance_params)
+    authorize @atendimento
 
     if @atendimento.save
       redirect_to @atendimento, notice: "Cadastrado com sucesso!"
@@ -34,14 +40,10 @@ class AttendancesController < ApplicationController
     end   
   end
 
-  def destroy
-    Technician.find(params[:id]).destroy
-    redirect_to attendance_url, notice: "Excluído com sucesso!"
-  end
-
   private
     def procura_atendimento
       @atendimento = Attendance.find(params[:id])
+      #authorize @atendimento
     end
 
     def attendance_params

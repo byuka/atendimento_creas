@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'people#index'
+  root to: 'static_pages#search_person'
   resources :users, path: :usuarios
   resources :attendances, path: :atendimentos
   resources :people, path: :cidadaos
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :services, path: :servicos
   #get '/servicos', to: 'services#index'
   # ação 'caminho_no_navegador', to: 'controller#acao'
+  get '/pesquisa', to: 'static_pages#search_person', as: :pesquisa
 end

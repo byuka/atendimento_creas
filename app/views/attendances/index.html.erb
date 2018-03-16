@@ -1,20 +1,26 @@
-<h1>Listagem de Atendimentos</h1>
+<h1 class="mt-5 mb-5">Listagem de Atendimentos</h1>
 
 <table class="table">
-    <tr>
-        <th>#</th>
-        <th>Nome</th>
-        <th>Situação</th>
-        <th colspan="1"></th>
-    </tr>
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Serviço</th>
+            <th>Tecnico</th>
+            <th>Data</th>
+            <th colspan="1"></th>
+        </tr>
+    </thead>
     <% @atendimentos.each do |atendimento| %>
         <tr>
-            <td><%= atendimento.id %></td>
+            <td><%= atendimento.id %></td>    
             <td><%= link_to atendimento.person.nome, atendimento %></td>
+            <td><%= atendimento.service.nome %></td>   
+            <td><%= atendimento.technician.nome %>
+            <td><%= l atendimento.created_at, format: :long %> 
 
             <td><%= link_to "Editar", edit_attendance_path(atendimento) %></td>
         </tr>
     <% end %>
 </table>
 
-<%= link_to  "Cadastrar Atendimento", new_attendance_path %>

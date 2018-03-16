@@ -1,16 +1,20 @@
-<h1>Listagem de Técnicos</h1>
+<h1 class="mb-5 mt-5">Listagem de Técnicos</h1>
 
 <table class="table">
-    <tr>
-        <th>#</th>
-        <th>Nome</th>
-        <th>Situação</th>
-        <th colspan="1"></th>
-    </tr>
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Situação</th>
+            <th colspan="1"></th>
+        </tr>
+    </thead>
     <% @tecnicos.each do |tecnico| %>
         <tr>
             <td><%= tecnico.id %></td>
             <td><%= link_to tecnico.nome, tecnico %></td>
+            <td><%= tecnico.cargo %></td>
             <td>
                 <% if tecnico.ativo %>
                 Ativo

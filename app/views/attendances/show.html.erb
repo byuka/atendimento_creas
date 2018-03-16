@@ -1,11 +1,11 @@
 
-<h1><%= @atendimento.person.id %> - <%= @atendimento.person.nome %></h1>
-
-<h3 class="mt-5">Informações: </h3>
-<ul class="list-group">
-  <li class="list-group-item"><strong>Serviço: </strong><%= @atendimento.service.nome %></li>
-  <li class="list-group-item"><strong>Técnico: </strong><%= @atendimento.technician.nome %></li>
-  <li class="list-group-item"><strong>Benefício: </strong><%= @atendimento.assistance.try(:nome) %></li>
+<h1 class="mt-5 mb-5"><%= @atendimento.id %> - <%= @atendimento.person.nome %></h1>
+<h4 class="text-center">Informações Gerais</h4>
+<ul class="info-list">
+  <li><span class="campo">Serviço:</span> <%= @atendimento.service.nome %></li>
+  <li><span class="campo">Técnico:</span> <%= @atendimento.technician.nome %></li>
+  <li><span class="campo">Benefício:</span> <%= @atendimento.assistance.try(:nome) %></li>
+  <li><span class="campo">Data de cadastro:</span> <%= l @atendimento.created_at, format: :long %></li>
 </ul>
 <hr>
 <%= link_to  "Voltar", technicians_path %>

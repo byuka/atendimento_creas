@@ -1,72 +1,25 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @cidadao.nome %>
-</p>
-
-<p>
-  <strong>Data nascimento:</strong>
-  <%= @cidadao.data_nascimento %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @cidadao.cpf %>
-</p>
-
-<p>
-  <strong>RG:</strong>
-  <%= @cidadao.rg %>
-</p>
-
-<p>
-  <strong>Endereco logradouro:</strong>
-  <%= @cidadao.endereco_logradouro %>
-</p>
-
-<p>
-  <strong>Endereco numero:</strong>
-  <%= @cidadao.endereco_numero %>
-</p>
-
-<p>
-  <strong>Endereco bairro:</strong>
-  <%= @cidadao.endereco_bairro %>
-</p>
-
-<p>
-  <strong>Naturalidade:</strong>
-  <%= @cidadao.naturalidade %>
-</p>
-
-<p>
-  <strong>Nome progenitor:</strong>
-  <%= @cidadao.nome_progenitor %>
-</p>
-
-<p>
-  <strong>Nome progenitora:</strong>
-  <%= @cidadao.nome_progenitora %>
-</p>
-
-<p>
-  <strong>Etinia:</strong>
-  <%= @cidadao.etinia %>
-</p>
-
-<p>
-  <strong>Escolaridade:</strong>
-  <%= @cidadao.escolaridade %>
-</p>
-
-<p>
-  <strong>Obs:</strong>
-  <%= @cidadao.obs %>
-</p>
-
-<p>
-  <strong>Ativo:</strong>
-  <%= @cidadao.ativo %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@cidadao) %> |
+<h1 class="mt-5 mb-5"><%= @cidadao.id %> - <%= @cidadao.nome %></h1>
+<h4 class="text-center">Informações Gerais</h4>
+  <ul class="info-list">
+    <li><span class="campo">Código:</span> <%= @cidadao.id %></li>
+    <li><span class="campo">Nome:</span> <%= @cidadao.nome %></li>
+    <li><span class="campo">RG:</span> <%= @cidadao.rg %></li>
+    <li><span class="campo">CPF:</span> <%= @cidadao.cpf %></li>
+    <li><span class="campo">Data de nascimento:</span> <%= @cidadao.data_nascimento %></li>
+    <li><span class="campo">Nome do pai:</span> <%= @cidadao.nome_progenitor %></li>
+    <li><span class="campo">Nome da mãe:</span> <%= @cidadao.nome_progenitora %></li>
+    <li><span class="campo">Naturalidade:</span> <%= @cidadao.naturalidade %></li>
+    <li><span class="campo">Cor da pele:</span> <%= @cidadao.etinia %></li>
+    <li><span class="campo">Grau de escolaridade:</span> <%= @cidadao.escolaridade %></li>
+    <li><span class="campo">Endereço:</span> <%= @cidadao.endereco_logradouro %>, <%= @cidadao.endereco_numero %>,  <%= @cidadao.endereco_bairro %></li>   
+    <li><span class="campo">Data de cadastro:</span> <%= l @cidadao.created_at, format: :long %></li>
+    <li><span class="campo">Ativo:</span>
+      <% if @cidadao.ativo %>
+        Sim
+      <% else %>
+        Não
+      <% end %>
+    </li>
+  </ul>
+<hr class="mt-5 mb-5">
 <%= link_to 'Back', people_path %>

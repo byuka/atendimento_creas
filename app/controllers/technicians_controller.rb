@@ -3,6 +3,7 @@ class TechniciansController < ApplicationController
 
   def index
     @tecnicos = Technician.all
+    authorize @tecnicos
   end
 
   def show
@@ -10,6 +11,7 @@ class TechniciansController < ApplicationController
 
   def new
     @tecnico = Technician.new
+    authorize @tecnico
   end
 
   def edit
@@ -17,6 +19,7 @@ class TechniciansController < ApplicationController
 
   def create
     @tecnico = Technician.new(technician_params)
+    authorize @tecnico
 
     if @tecnico.save
         redirect_to @tecnico, notice: "Cadastrado com sucesso!"
@@ -27,20 +30,17 @@ class TechniciansController < ApplicationController
 
   def update
     if @tecnico.update(technician_params)
+      authorize @tecnico
       redirect_to technicians_url, notice: "Dados atualizados com sucesso!"
     else
       render :edit
     end    
   end
-
-  def destroy
-    Technician.find(params[:id]).destroy
-    redirect_to technician_url, notice: "Excluído com sucesso!"
-  end
-
+  
   private
   def procura_tecnico
     @tecnico = Technician.find(params[:id])
+    authorize @tecnico
   end
 
   def technician_params

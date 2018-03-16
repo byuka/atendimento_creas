@@ -5,3 +5,29 @@
     margin-top: 30px;
 }
 
+#container_busca{
+    max-width: 700px; 
+}
+
+#card_busca{
+    background-color: #f5f5f5;
+}
+
+.info-list{
+    list-style: none;
+
+    .campo {
+        color: #17a2b8;
+        font-weight: bold;
+        width: 200px;
+        display: inline-block;
+        margin-right: 30px;
+        text-align: right;
+        padding: 10px;
+        border-right: 1px solid #eee 
+    }
+    li {
+        border-bottom: 1px solid #eee;
+        font-size: 17px;
+    }     
+}

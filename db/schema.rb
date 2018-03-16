@@ -80,7 +80,8 @@ ActiveRecord::Schema.define(version: 20180302185625) do
     t.string "remember_token", limit: 128, null: false
     t.string "nome", null: false
     t.string "cpf"
-    t.integer "permissao", null: false
+    t.string "permissao", null: false
+    t.boolean "ativo", default: true
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end

@@ -8,7 +8,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :remember_token, limit: 128, null: false
       t.string :nome, null: false
       t.string :cpf
-      t.integer :permissao, null: false
+      t.string :permissao, null: false
+      t.boolean :ativo, default: true
     end
 
     add_index :users, :email
