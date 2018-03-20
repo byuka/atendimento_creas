@@ -1,7 +1,7 @@
 
 
 <div class="container mt-5" id="container_busca">
-    <h1 class="text-center mt-5">Buscar Cidadão</h1>
+    <h1 class="text-center h1-padrao">Buscar Cidadão</h1>
     <%= simple_form_for :pesquisa, url: pesquisa_path, method: :get do |f| %>
         <%= f.input :termo, label: "Termo: ", input_html: { class:" mt-5 mb-5 bg-light form-control-lg"}, label_html: {class: "sr-only"}, placeholder: "Nome, RG ou CPF." %>
     <% end %>
@@ -9,13 +9,13 @@
         <% @cidadaos.each do |cidadao| %>
             <div class="card mx-auto mb-2 bg-light">
                 <div class="card-body rounded">
-                    <h5 class="card-title text-primary"><strong><%= cidadao.id %> - <%= cidadao.nome %></strong></h5>
+                    <h5 class="card-title text-primary text-info"><strong><%= cidadao.id %> - <%= cidadao.nome %></strong></h5>
                     <p class="card-text">
                         <strong>CPF:</strong> <%= cidadao.cpf %><br>
                         <strong>RG:</strong> <%= cidadao.rg %><br>
                         <strong>Dt. Nascimento: </strong><%= l cidadao.data_nascimento, format: :long %></p>                
                     <%= link_to "Perfil", cidadao, class: "btn btn-secondary" %>
-                    <%= link_to "Novo Atendimento", new_attendance_path(cidadao_id: cidadao.id), class: "btn btn-primary float-right" %>
+                    <%= link_to "Novo Atendimento", new_attendance_path(cidadao_id: cidadao.id), class: "btn btn-info float-right" %>
                 </div>
             </div>
         <% end %>
@@ -23,5 +23,5 @@
         <p>Nenhum cidadão encontrado</p>
     <% end %>
 
-    <%= link_to  "Cadastrar Cidadão", new_person_path, class:"btn btn-outline-dark float-right mb-5 mt-5" %>
+    <%= link_to  "Cadastrar Cidadão", new_person_path, class:"btn btn-outline-secondary float-right mb-5 mt-5" %>
 </div>

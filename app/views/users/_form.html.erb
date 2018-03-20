@@ -4,14 +4,26 @@
 
 <div class="form-inputs" >
   <%= f.input :nome, label: "Nome completo: " %>
-  <%= f.input :cpf, label: "CPF: " %>
-  <%= f.input :email, label: "E-mail: " %>
-  <% if params[:action] == "new" %>
-    <%= f.input :password, label: "Senha: " %>
-  <% end %>
-  <%= f.input :permissao, label: "Perfil: ", collection: PERMISSOES, as: :radio_buttons %>
-  <%= f.input :ativo %>
-  <%= f.button :submit, "Salvar" %>
+  <div class="row">
+    <div class="col-7">
+      <%= f.input :email, label: "E-mail: " %>
+    </div>
+    <% if params[:action] == "new" %>
+      <div class="col">
+        <%= f.input :password, label: "Senha: " %>
+      </div>
+    <% end %>
+    <div class="col">
+      <%= f.input :cpf, label: "CPF: ", input_html: {class:"cpf"} %>
+    </div>
+  </div>
   
-</div>
+<%= f.input :permissao, label: "Perfil: ", collection: PERMISSOES, as: :radio_buttons, item_wrapper_class: :radio %>
+
+<% unless params[:action] == "new" %>
+  <%= f.input :ativo %>
+<% end %>
+
+<%= f.button :submit, "Salvar", class:"btn-lg btn btn-outline-info btn-block" %>
+
 <% end %>

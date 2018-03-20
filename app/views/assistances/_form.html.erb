@@ -1,7 +1,6 @@
 <%= simple_form_for beneficio do |f| %>
-    <%= f.error_notification %>
     <%= f.input :nome %>
     <%= f.input :descricao, label: "Descrição" %>
     <%= f.input :ativo %>
-    <%= f.button :submit, "Salvar" %>
+    <%= f.button :submit, "Salvar", class:"btn-lg btn btn-outline-info btn-block" %>
 <% end %>

@@ -1,9 +1,18 @@
 <%= simple_form_for @tecnico do |f| %>
-    <%= f.error_notification %>
     <%= f.input :nome %>
-    <%= f.input :data_nascimento, label: "Data de nascimento", start_year: Time.now.year - 110, end_year: Time.now.year %>
-    <%= f.input :matricula, label: "Matricula" %>
-    <%= f.input :cargo, label: "Cargo" %>
-    <%= f.input :ativo %>
-    <%= f.button :submit, "Salvar" %>
+    <div class="row">
+        <div class="col">
+            <%= f.input :matricula, label: "Matricula" %>
+        </div>
+        <div class="col">
+            <%= f.input :cargo, label: "Cargo" %>
+        </div>
+        <div class="col">
+            <%= f.input :data_nascimento, label: "Data de nascimento", start_year: Time.now.year - 110, end_year: Time.now.year %>
+        </div>
+    </div>
+    <% unless params[:action] == "new" %>
+        <%= f.input :ativo %>
+    <% end %>
+    <%= f.button :submit, "Salvar", class:"btn-lg btn btn-outline-info btn-block" %>
 <% end %>
